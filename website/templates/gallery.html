@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- css files -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/Portofolio.css'%}" />
+
+    <title>Products</title>
+  </head>
+  <body>
+    <div class="slider">
+      <header>
+        <div class="logo">
+          <img
+            id="logo1"
+            src="{% static 'images/logo.png'%}"
+            alt="Website Logo"
+            height="150"
+            width="150"
+          />
+        </div>
+        <nav style="margin-left: 400px">
+          <ul>
+            <li>
+              <b><a href="/home">Home</a></b>
+            </li>
+            <li>
+              <b><a href="/about">About</a></b>
+            </li>
+            <li>
+              <b><a href="/contact">Contact Us</a></b>
+            </li>
+            <li>
+              <b><a href="/gallery">Browse Awesome Designs!</a></b>
+            </li>
+            <li>
+              <b><a href="/cart">Cart</a></b>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <div style="margin-top: 30px; margin-left: 300px">
+            <button id="sign" type="button">
+              <a
+                href="/signout"
+                style="display: block; height: 100%; width: 100%"
+                >Sign out</a
+              >
+            </button>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- Portofolio section  -->
+    
+    <h1 style="color: #883030">Our Products</h1>
+    
+                            {% for product in products %}
+    
+    <div class="container">
+      <div class="Portofolio-item">
+        <img
+          src="{{product.image.url}}"
+          alt=""
+        />
+         <a href="product/{{product.id}}" style="cursor: pointer;">
+        <div class="layer">
+          <div class="layer-info">
+            <span class="layer-category"> {{product.name}}</span>
+            <h3 class="layer-title">$ {{product.price}}</h3>
+            <a href="cart/{{product.id}}"><i class="fa fa-shopping-cart"></i></a>
+           </div>
+        </div>
+        </a>
+      </div>
+      </div>
+      
+      
+                     {% endfor %}
+      
+      
+                              
+      <div class="clear"></div>
+    </div>
+    <footer>
+      <p>&copy; 2023 Skully Merch. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

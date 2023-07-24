@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign in</title>
+    <link rel="stylesheet" href="{% static 'css/style_in.css'%}" />
+    <link
+      rel="stylesheet"
+      href="{% static
+    'fonts/fontawesome-free-6.4.0-web/css/all.css'%}"
+    />
+  </head>
+  <body>
+    <form class="container" method="post">
+      {% csrf_token %}
+      <div class="form_box">
+        <header>Sign In <span id="T">0</span></header>
+        <p style="color: white">
+          <span style="opacity: 0">000</span>
+        </p>
+        {% for message in messages %}
+        <h3 style="color: red; font-weight: bold">{{message}}</h3>
+        {% endfor %}
+        <div class="Sign_in">
+          <input
+            type="text"
+            class="input"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          <i class="fa-solid fa-envelope fa-bounce"></i>
+        </div>
+        <div class="password">
+          <input
+            type="password"
+            class="input"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <i class="fa-solid fa-lock fa-bounce"></i>
+        </div>
+        <div class="links">
+          <input type="submit" class="submit" value="Sign in" />
+          <a
+            class="register"
+            href="/signup"
+            style="color: white; float: right; font-weight: bold"
+            >Sign up</a
+          >
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

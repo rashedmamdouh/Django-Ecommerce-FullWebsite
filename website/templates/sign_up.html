@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/style_up.css'%}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'fonts/fontawesome-free-6.4.0-web/css/all.css'%}"
+    />
+  </head>
+  <body>
+    {% for message in messages %}
+    <h5 style="color: red; font-weight: bold">{{message}}</h5>
+    {% endfor %}
+    <form class="container" method="post">
+      {% csrf_token %}
+      <div class="form_box">
+        <header>Sign Up <span>0</span></header>
+        <p style="color: red">
+          <span style="opacity: 0">000000000</span>
+          {{message}}
+        </p>
+        <div class="fname">
+          <input
+            type="text"
+            class="input"
+            name="fname"
+            placeholder="First Name"
+            required
+          />
+          <i class="fa-regular fa-user fa-bounce"></i>
+        </div>
+        <div class="lname">
+          <input
+            type="text"
+            class="input"
+            name="lname"
+            placeholder="Last Name"
+            required
+          />
+          <i class="fa-regular fa-user fa-bounce"></i>
+        </div>
+        <div class="email">
+          <input
+            type="text"
+            class="input"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          <i class="fa-solid fa-envelope fa-bounce"></i>
+          <label for="email"></label>
+        </div>
+        <div class="password">
+          <input
+            type="password"
+            class="input"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <i class="fa-solid fa-lock fa-bounce"></i>
+        </div>
+        <div class="link">
+          <input
+            type="submit"
+            class="submit"
+            name="signup"
+            placeholder="Sign Up"
+          />
+          <a class="login" href="/signin">Login</a>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

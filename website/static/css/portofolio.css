@@ -1,0 +1,142 @@
+h1{color: black;
+text-align: center;
+font-size: 50px;
+margin: 20px;}
+
+
+.Portofolio-item{
+    float: left;
+    width:30%;
+    position: relative;
+    padding:40px ;
+    margin-bottom: 50px;
+    
+    
+ }
+ .Portofolio-item img{
+    width:100%;
+    height: 400px;
+      object-fit: cover;
+      border-radius: 20%;
+ }
+
+ .layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s;
+ }
+.slider {
+   position: fixed;
+   width: 100%;
+   background-color: #fff;
+   z-index: 1000;
+   margin-top: -20px;
+}
+ .Portofolio-item:hover .layer{
+    opacity: 1;  
+ }
+
+ .layer-info{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width:60%;
+    text-align: center;
+ }
+
+ .layer-category{
+color:red;
+font-weight: bold;
+font-size: 20px;
+text-transform: uppercase;
+margin-bottom: 5px;
+display: block;
+top: 10px;
+position: relative;
+transition:top 0.5s;
+transition-delay: 0.2s;
+ }
+
+.layer-title{
+    font-size: 20px;
+    color:var(--white);
+    margin-bottom:10px ;
+    top: 10px;
+    position: relative;
+    transition:top 0.5s;
+    transition-delay: 0.3s;
+       }
+
+.layer a{
+       top: 10px;
+          position: relative;
+          transition:top 0.5s;
+          transition-delay: 0.3s;
+       }
+
+.layer a i{
+    display: inline-block;
+    width:40px;
+    height:40px;
+    background-color:var(--maincolor);
+    line-height: 40px;
+
+ }
+
+
+
+
+ .Portofolio-item:hover .layer a,
+ .Portofolio-item:hover .layer-category,
+ .Portofolio-item:hover .layer-title{
+    top: 0;
+ }
+
+ .clear{
+   clear: both;
+ }
+
+ :root {
+
+    --maincolor: #6195ff;
+    --graycolor: #999;
+    --bggray: #f9f9f9;
+    --white: #fff;
+
+ }
+
+ * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* width not increase in case of padding , margin */
+ }
+
+ .container {
+    width: 90%;
+    margin: auto;
+    margin-left: 150px;
+    margin-top: 200px;
+
+ }
+
+ body {
+    font-family: 'Varela Round', sans-serif;
+    background-color: #6195ff;
+
+ }
+
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5 h6 {
+    font-family: 'Montserrat', sans-serif;
+ }

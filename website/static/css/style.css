@@ -1,0 +1,326 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/****************for home page*********************/
+body {
+  font-family: Arial, sans-serif;
+  color: #883030;
+  background-color: #ffffff00;
+}
+
+h1,
+h2 {
+  color: #5131f2;
+  margin-bottom: 50px;
+}
+
+p {
+  color: #883030;
+  ;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.slider {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+}
+
+#sign {
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 17px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: rgb(192, 189, 189);
+  color: black;
+  border: 2px solid crimson;
+  border-radius: 3px;
+  font-weight: bold;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  height: 50px;
+  width: 200px;
+}
+
+span {
+  color: white;
+}
+
+#sign a {
+  text-decoration: none;
+
+}
+
+#sign:hover {
+  background-color: crimson;
+  color: white;
+}
+
+header {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav a:after {
+  content: "";
+  height: 3px;
+  background-color: crimson;
+  display: block;
+  transition: width 0.5s;
+}
+
+#logo1 {
+
+  border-radius: 50%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a:after {
+  width: 0;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+#banner {
+  background-image: url("/static/images/banner.png");
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  margin-bottom: 80px;
+}
+
+
+.banner-img {
+  width: 100%;
+}
+
+.best-sellers {
+  display: inline-block;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: stretch;
+  width: 100%;
+  float: left;
+  padding-left: 70px;
+
+}
+
+.product {
+  height: 100%;
+  text-align: center;
+  display: inline-block;
+  float: left;
+  width: 30%;
+  margin-bottom: 30px;
+}
+
+.product img {
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  background-color: #000;
+  color: #f00;
+  text-align: center;
+  padding: 1rem;
+}
+
+#shopnow {
+  width: 255px;
+  height: 55px;
+  position: relative;
+  top: 87%;
+  left: 20%;
+  cursor: pointer;
+  background-image: url("/static/images/background.jpg");
+  border: white 4px solid;
+  font-size: 20px;
+  letter-spacing: 6px;
+  border-radius: 3px;
+}
+
+/****************for design page*********************/
+.tshirt-designer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.canvas-container {
+  position: relative;
+}
+
+.controls {
+  width: 200px;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.color-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+}
+
+/****************for about page*********************/
+#about {
+  margin-bottom: 30px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.service {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#footer1 {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#description {
+  color: lightcoral;
+}
+
+label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#name,
+#email,
+#message {
+  width: 400px;
+}
+
+#contact {
+  margin-left: 100px;
+
+}
+
+#submit {
+  padding: 20px;
+  font-weight: bold;
+}
+
+/****************for about page*********************/
+.contact-info,
+.contact-form,
+.map {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+
+button {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+}
+
+/****************************** Getting Started**********************************/
+
+#starting {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
+  float: left;
+  margin-top: 40px;
+}
+
+.start {
+  width: 30%;
+  display: inline-block;
+}
+
+.start img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.start h3 {
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+
+.start p {
+  width: 200px;
+  height: 100px;
+  margin-left: 150px;
+  margin-top: 20px;
+}

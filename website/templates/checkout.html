@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      form > div {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: inline-block;
+        width: 100px;
+        font-weight: bold;
+      }
+
+      input {
+        padding: 5px;
+        width: 200px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      tfoot td {
+        font-weight: bold;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      .quantity {
+        width: 50px;
+        text-align: center;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <header>
+        <div class="logo">
+          <img
+            id="logo1"
+            src="{% static 'images/logo.png'%}"
+            alt="Website Logo"
+            height="150"
+            width="150"
+          />
+        </div>
+        <nav style="margin-left: 400px">
+          <ul>
+            <li>
+              <b><a href="/home">Home</a></b>
+            </li>
+            <li>
+              <b><a href="/about">About</a></b>
+            </li>
+            <li>
+              <b><a href="/contact">Contact Us</a></b>
+            </li>
+            <li>
+              <b><a href="/design">Design Your T-Shirt</a></b>
+            </li>
+            <li>
+              <b><a href="/gallery">Browse Awesome Designs!</a></b>
+            </li>
+            <li>
+              <b><a href="/checkout">Checkout</a></b>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          {% if not user.is_authenticated %}
+          <div style="margin-top: 30px; margin-left: 300px">
+            <button id="sign" type="button">
+              <a
+                href="/signin"
+                style="display: block; height: 100%; width: 100%"
+                >Sign in</a
+              >
+            </button>
+          </div>
+          {% else %}
+
+          <div style="margin-top: 30px; margin-left: 300px">
+            <button id="sign" type="button">
+              <a
+                href="/signout"
+                style="display: block; height: 100%; width: 100%"
+                >Sign out</a
+              >
+            </button>
+          </div>
+          {% endif %}
+        </nav>
+      </header>
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <h1 style="padding: 20px">Checkout</h1>
+
+    <main>
+      <form id="checkout-form" method="post">
+        {% csrf_token %}
+        <h2>Customer Information</h2>
+        <br />
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" value="{{name}}" readonly />
+        </div>
+        <div>
+          <label for="street">Adress:</label>
+          <input
+            type="text"
+            id="street"
+            style="width: 400px"
+            required
+            name="address"
+          />
+        </div>
+        <div>
+          <label for="phone">Phone:</label>
+          <input type="text" id="name" required name="phone" />
+        </div>
+
+        <h2>Order Details</h2>
+        <br />
+        <table id="order-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product, quantity in products.items %}
+            <tr>
+              <td>{{product.name}}</td>
+              <td class="price">{{ product.price }}</td>
+              <td>
+                <input
+                  type="number"
+                  value="{{quantity}}"
+                  class="quantity"
+                  readonly
+                />
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td id="total"></td>
+              <td colspan="2"></td>
+            </tr>
+          </tfoot>
+        </table>
+        <button id="checkout-btn" type="submit">Checkout</button>
+      </form>
+    </main>
+    <script>
+      var quantities;
+      var prices;
+      function updateprice() {
+        var total = 0;
+        quantities = document.querySelectorAll(".quantity");
+        prices = document.querySelectorAll(".price");
+        for (var i = 0; i < quantities.length; i++) {
+          cost = quantities[i].value * prices[i].innerHTML;
+          total += cost;
+        }
+        console.log(total);
+        document.getElementById("total").innerHTML = "$" + total;
+      }
+      updateprice();
+
+      quantities.forEach((element) => {
+        element.addEventListener("change", updateprice);
+      });
+    </script>
+  </body>
+</html>

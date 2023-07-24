@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("red_smoke.gif");
+    background-color: black;
+    background-size: cover;
+    overflow: hidden; 
+}
+span{
+    opacity: 0;
+}
+i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #fff;
+}
+.container{
+display: flex;
+flex-direction: column;
+height: 100vh;
+flex-wrap: wrap;
+align-content: center;
+justify-content: center;
+}
+.form_box{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+header{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+    margin: 5px;
+}
+.fname{
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 63.5px;
+}
+.fname .input{
+    height: 45px;
+    width:100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+}
+.lname{
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 63.5px;
+}
+.lname .input{
+    height: 45px;
+    width:100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+}
+.email{
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 63.5px;
+}
+.email .input{
+    height: 45px;
+    width:100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+}
+.password{
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 63.5px;
+}
+.password .input{
+    height: 45px;
+    width:100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+}
+.link{
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 63.5px;
+}
+.link .submit{
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    height: 45px;
+    width: 204px;
+    outline: none;
+    color: black;
+    background: rgba(255,255,255,0.7);
+    cursor: pointer;
+    margin: 0px;
+}
+.login{
+    margin: 20px;
+}
+.login:link{
+    color: rgb(218, 0, 95);
+}
+.login:hover{
+    color: blueviolet;
+}
+.login:visited{
+    color: violet;
+}

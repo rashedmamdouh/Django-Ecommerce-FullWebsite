@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /* F:\\_lectures\\Semester6\\Web\\Assignments\\porject_1\\projectPart1\\red_smoke.gif */
+    background-image: url("red_smoke.gif");
+    background-color: black;
+    background-size: cover;
+    overflow: hidden; 
+}
+#T{
+    color: white;
+    opacity: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.form_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 360px;
+    height: 475.1px;
+}
+header{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+    margin: 5px;
+ } 
+.Sign_in{ 
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 63.5px;
+} 
+.Sign_in .input{
+    height: 45px;
+    width:100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+}
+
+.password{
+    padding: 20px;
+    margin: 5px;
+    width: 350px;
+    height: 63.5px;
+}
+.password .input{
+    height: 45px;
+    width:100%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+    outline: none;
+}
+i{
+    position: relative;
+    top: -33px;
+    left: 17px;
+    color: #fff;
+}
+.links{
+    padding: 20px;
+    margin: 5px;
+}
+.submit{
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    height: 45px;
+    width: 204px;
+    outline: none;
+    color: black;
+    background: rgba(255,255,255,0.7);
+    cursor: pointer;
+    margin: 0;
+}
+.register{
+    margin: 20px;
+}
+.register:link{
+    color: rgb(218, 0, 95);
+}
+.register:hover{
+    color: blueviolet;
+}
+.register:visited{
+    color: violet;
+}
+
+
+
